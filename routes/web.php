@@ -6,6 +6,9 @@ use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\PegawaiDBController ;
 use App\Http\Controllers\KeranjangBelanjaController ;
+use App\Http\Controllers\NilaiKuliahController ;
+use App\Http\Controllers\sirupController ;
+
 
 
 Route::get('/', function () {
@@ -61,3 +64,14 @@ Route::get('/pegawai/', [PegawaiDBController::class, 'index']);
 Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index']);
 Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
 Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class, 'store']);
+
+Route::get('/NilaiKuliah', [NilaiKuliahController::class, 'index']);
+Route::get('/NilaiKuliah/tambah', [NilaiKuliahController::class, 'tambah']);
+Route::post('/NilaiKuliah/store', [NilaiKuliahController::class, 'store']);
+
+Route::get('/sirupp', [sirupController::class, 'index']);
+Route::get('/sirup/create', [sirupController::class, 'create']);
+Route::post('/sirup', [sirupController::class, 'store']);
+Route::get('/sirup/{kodesirup}/edit', [sirupController::class, 'edit']);
+Route::put('/sirup/{kodesirup}', [sirupController::class, 'update']);
+Route::delete('/sirup/{kodesirup}', [sirupController::class, 'destroy']);
