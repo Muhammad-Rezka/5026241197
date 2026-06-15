@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController ;
 use App\Http\Controllers\KeranjangBelanjaController ;
 use App\Http\Controllers\NilaiKuliahController ;
 use App\Http\Controllers\sirupController ;
+use App\Http\Controllers\nilaiPesertaController ;
 
 
 
@@ -69,9 +70,13 @@ Route::get('/NilaiKuliah', [NilaiKuliahController::class, 'index']);
 Route::get('/NilaiKuliah/tambah', [NilaiKuliahController::class, 'tambah']);
 Route::post('/NilaiKuliah/store', [NilaiKuliahController::class, 'store']);
 
-Route::get('/sirupp', [sirupController::class, 'index']);
+Route::get('/sirup', [sirupController::class, 'index']);
 Route::get('/sirup/create', [sirupController::class, 'create']);
 Route::post('/sirup', [sirupController::class, 'store']);
 Route::get('/sirup/{kodesirup}/edit', [sirupController::class, 'edit']);
 Route::put('/sirup/{kodesirup}', [sirupController::class, 'update']);
 Route::delete('/sirup/{kodesirup}', [sirupController::class, 'destroy']);
+
+Route::get('/eas', [nilaiPesertaController::class, 'index']);
+Route::get('/eas/tambah', [nilaiPesertaController::class, 'tambah']);
+
